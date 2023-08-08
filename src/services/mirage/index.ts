@@ -2,6 +2,7 @@ import { createServer, Factory, Model } from 'miragejs';
 import { faker } from '@faker-js/faker';
 
 export interface Car {
+  id: string;
   imageUrl: string;
   brand: string;
   model: string;
@@ -17,6 +18,9 @@ export function makeServer() {
 
     factories: {
       car: Factory.extend({
+        id() {
+          return faker.string.uuid();
+        },
         imageUrl() {
           return faker.image.avatar();
         },

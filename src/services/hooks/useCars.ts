@@ -7,6 +7,7 @@ export async function getCars(): Promise<Car[]> {
 
   const cars = data.cars.map((car: Car) => {
     return {
+      id: car.id,
       imageUrl: car.imageUrl,
       brand: car.brand,
       model: car.model,

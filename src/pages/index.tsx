@@ -1,7 +1,9 @@
-import { useCars } from '../services/hooks/useCars';
+import { CarsList } from '../components/Cars/CarsList';
 
 export default function Home() {
-  const { data, isLoading, error, isFetching } = useCars();
-
-  return <h1>Hello World</h1>;
+  return (
+    <div>
+      <CarsList />
+    </div>
+  );
 }
