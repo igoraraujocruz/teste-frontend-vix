@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
+import { useCars } from '../services/hooks/useCars';
 
 export default function Home() {
-  fetch('http://localhost:3000/api/users')
-    .then(async response => await response.json())
-    .then(data => {
-      console.log(data);
-    });
+  const { data, isLoading, error, isFetching } = useCars();
+
   return <h1>Hello World</h1>;
 }
