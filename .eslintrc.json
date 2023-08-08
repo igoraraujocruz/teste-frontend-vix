@@ -52,7 +52,8 @@
       "error"
     ],
     "react/react-in-jsx-scope": "off",
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "@typescript-eslint/no-floating-promises": "off"
   },
   "settings": {
     "import/resolver": {
