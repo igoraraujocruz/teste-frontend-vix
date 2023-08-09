@@ -20,6 +20,8 @@ export const Search = () => {
         .then(() => {
           setIsLoading(false);
         });
+    } else {
+      setFindedValues([]);
     }
   }, [value]);
 
@@ -48,6 +50,16 @@ export const Search = () => {
 
       {findedValues.length > 0 && (
         <div className="results">
+          <div className="button">
+            <button
+              onClick={() => {
+                setFindedValues([]);
+              }}
+            >
+              X
+            </button>
+          </div>
+
           {findedValues.map(car => (
             <div key={car.id} className="car">
               <img src={car.imageUrl} alt="image car" width={'170px'} />
@@ -55,7 +67,7 @@ export const Search = () => {
                 <h1>
                   {car.brand} - {car.model}
                 </h1>
-                <h2>{new Date(car.year).getFullYear()}</h2>
+                <h2>{car.year}</h2>
                 <h2>R$ {car.price}</h2>
               </div>
             </div>

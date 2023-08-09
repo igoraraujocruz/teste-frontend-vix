@@ -6,7 +6,7 @@ export interface ICar {
   imageUrl: string;
   brand: string;
   model: string;
-  year: Date;
+  year: string;
   price: number;
 }
 
@@ -56,8 +56,8 @@ export function makeServer() {
             id: faker.string.uuid(),
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
-            brand: 'audi',
-            model: 'a4',
+            brand: 'Audi',
+            model: 'A4',
             year: '2023',
             price: faker.commerce.price(),
           },
@@ -65,8 +65,26 @@ export function makeServer() {
             id: faker.string.uuid(),
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
-            brand: 'gol',
-            model: 'g1',
+            brand: 'Audi',
+            model: 'A4',
+            year: '2023',
+            price: faker.commerce.price(),
+          },
+          {
+            id: faker.string.uuid(),
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Audi',
+            model: 'A4',
+            year: '2023',
+            price: faker.commerce.price(),
+          },
+          {
+            id: faker.string.uuid(),
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Gol',
+            model: 'G1',
             year: '2022',
             price: faker.commerce.price(),
           },
@@ -74,16 +92,21 @@ export function makeServer() {
             id: faker.string.uuid(),
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
-            brand: 'volvo',
-            model: 'cts',
+            brand: 'Volvo',
+            model: 'CTS',
             year: '2021',
             price: faker.commerce.price(),
           },
         ];
 
-        const filter = object.filter(function (obj) {
-          return obj.brand === params;
-        });
+        const filter = object.filter(
+          obj =>
+            obj.brand.toLowerCase().includes(params.toLowerCase()) ||
+            obj.model.toLowerCase().includes(params.toLowerCase()) ||
+            obj.year.toLowerCase().includes(params.toLowerCase()),
+        );
+
+        console.log(filter);
 
         return filter;
       });
