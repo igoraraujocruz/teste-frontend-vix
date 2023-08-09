@@ -22,7 +22,9 @@ export function makeServer() {
           return faker.string.uuid();
         },
         imageUrl() {
-          return faker.image.avatar();
+          return faker.image.urlLoremFlickr({
+            category: 'cars',
+          });
         },
         brand() {
           return faker.vehicle.manufacturer();
