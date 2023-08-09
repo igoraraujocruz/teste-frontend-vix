@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Car } from '../components/Cars/Car';
 import { Search } from '../components/Search/Search';
 import { Spinner } from '../components/Spinner/Spinner';
@@ -16,7 +15,7 @@ export default function Home() {
       </SearchStyle>
       {isFetching ? (
         <SippnerStyle>
-          <Spinner />
+          <Spinner w="50rem" />
         </SippnerStyle>
       ) : (
         <Content>

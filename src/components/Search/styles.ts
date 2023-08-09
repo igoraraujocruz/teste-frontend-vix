@@ -30,7 +30,9 @@ export const Content = styled.div`
   background: #fff;
 
   .loading {
-    background: red;
+    display: flex;
+    justify-content: center;
+    width: 4rem;
   }
 
   .svg {

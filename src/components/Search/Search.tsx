@@ -2,22 +2,31 @@ import { useEffect, useState } from 'react';
 import { Container, Content } from './styles';
 import { api } from '../../services/api';
 import { ICar } from '../../services/mirage';
+import { Spinner } from '../Spinner/Spinner';
 
 export const Search = () => {
   const [value, setValue] = useState('');
   const [findedValues, setFindedValues] = useState<ICar[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (value) {
-      api.get(`/cars/${value}`).then(response => {
-        setFindedValues(response.data);
-      });
+      setIsLoading(true);
+      api
+        .get(`/cars/${value}`)
+        .then(response => {
+          setFindedValues(response.data);
+        })
+        .then(() => {
+          setIsLoading(false);
+        });
     }
   }, [value]);
 
   return (
     <Container>
       <Content>
+        <div className="loading">{isLoading && <Spinner w="30rem" />}</div>
         <input
           type="text"
           name="search"

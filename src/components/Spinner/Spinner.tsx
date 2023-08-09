@@ -1,14 +1,7 @@
-import { StyledSpinner } from './styles';
+interface ISpinner {
+  w: string;
+}
 
-export const Spinner = () => (
-  <StyledSpinner viewBox="0 0 50 50">
-    <circle
-      className="path"
-      cx="25"
-      cy="25"
-      r="20"
-      fill="none"
-      strokeWidth="3"
-    />
-  </StyledSpinner>
+export const Spinner = ({ w }: ISpinner) => (
+  <img src="loading.svg" alt="loading" width={w} />
 );
