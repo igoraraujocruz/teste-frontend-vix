@@ -1,7 +1,7 @@
 import { createServer, Factory, Model } from 'miragejs';
 import { faker } from '@faker-js/faker';
 
-export interface Car {
+export interface ICar {
   id: string;
   imageUrl: string;
   brand: string;
@@ -13,7 +13,7 @@ export interface Car {
 export function makeServer() {
   const server = createServer({
     models: {
-      car: Model.extend<Partial<Car>>({}),
+      car: Model.extend<Partial<ICar>>({}),
     },
 
     factories: {

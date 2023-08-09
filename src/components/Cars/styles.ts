@@ -1,17 +1,6 @@
 import { styled } from 'styled-components';
 
-export const Main = styled.main`
-  padding: 15px 9%;
-  padding-bottom: 100px;
-`;
-
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-  gap: 15px;
-`;
-
-export const Content = styled.div`
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   text-align: center;
