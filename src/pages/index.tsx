@@ -1,16 +1,23 @@
+import { useState } from 'react';
 import { Car } from '../components/Cars/Car';
+import { Search } from '../components/Search/Search';
 import { Spinner } from '../components/Spinner/Spinner';
 import { useCars } from '../services/hooks/useCars';
 import { ICar } from '../services/mirage';
-import { Container, Content } from './styles';
+import { Container, Content, SearchStyle, SippnerStyle } from './styles';
 
 export default function Home() {
   const { data, isFetching } = useCars();
 
   return (
     <Container>
+      <SearchStyle>
+        <Search />
+      </SearchStyle>
       {isFetching ? (
-        <Spinner />
+        <SippnerStyle>
+          <Spinner />
+        </SippnerStyle>
       ) : (
         <Content>
           {data.map((car: ICar) => (

@@ -1,11 +1,11 @@
 import { useQuery } from 'react-query';
 import { api } from '../api';
-import { Car } from '../mirage';
+import { ICar } from '../mirage';
 
-export async function getCars(): Promise<Car[]> {
+export async function getCars(): Promise<ICar[]> {
   const { data } = await api.get('cars');
 
-  const cars = data.cars.map((car: Car) => {
+  const cars = data.cars.map((car: ICar) => {
     return {
       id: car.id,
       imageUrl: car.imageUrl,

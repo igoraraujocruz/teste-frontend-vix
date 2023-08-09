@@ -8,7 +8,7 @@ export const Spinner = () => (
       cy="25"
       r="20"
       fill="none"
-      strokeWidth="2"
+      strokeWidth="3"
     />
   </StyledSpinner>
 );

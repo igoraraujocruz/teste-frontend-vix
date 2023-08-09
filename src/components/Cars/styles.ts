@@ -13,6 +13,7 @@ export const Container = styled.div`
   }
 
   h2 {
+    color: #444;
     font-size: 1.3rem;
   }
   img {

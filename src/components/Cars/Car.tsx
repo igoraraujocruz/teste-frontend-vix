@@ -4,7 +4,7 @@ import { Container } from './styles';
 export const Car = (car: ICar) => {
   return (
     <Container key={car.id}>
-      <img src={car.imageUrl} alt="image car" height="250px" />
+      <img src={car.imageUrl} alt="image car" />
       <h1>
         {car.brand} - {car.model}
       </h1>
