@@ -19,9 +19,3 @@ export const Container = styled.div`
     width: 250px;
   }
 `;
-
-export const SnipperStyle = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
-`;
