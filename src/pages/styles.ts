@@ -30,7 +30,7 @@ export const SearchStyle = styled.div`
     cursor: pointer;
   }
 
-  p {
+  .login {
     margin-left: 1rem;
   }
 

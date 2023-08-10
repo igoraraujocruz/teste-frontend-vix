@@ -22,7 +22,7 @@ export default function Home() {
           </div>
         </Link>
         <Link href={'/login'}>
-          <p>Login</p>
+          <p className="login">Login</p>
         </Link>
       </SearchStyle>
 

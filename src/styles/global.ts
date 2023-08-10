@@ -14,6 +14,8 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
+    a { color: inherit; } 
+
     html {
         @media (max-width: 1175px) {
             font-size: 87.5%;
