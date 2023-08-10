@@ -51,6 +51,14 @@ características, etc.
 Realize testes básicos para garantir o bom funcionamento da aplicação
 
 
+✅ Criar uma tela de login simples, onde o usuário possa inserir um nome de usuário e uma senha,
+nela é necessário autenticação real. Apenas valide se os campos foram preenchidos corretamente, ao
+fazer login com sucesso, redirecione o usuário para a página inicial do catálogo de carros.
+<br>
+
+✅ Adicionar um menu de navegação simples que permita ao usuário alternar entre a página inicial e
+a página de favoritos
+
 ## ⚙️ Iniciando o projeto
 Primeiramente, instale todas as dependências:
 
