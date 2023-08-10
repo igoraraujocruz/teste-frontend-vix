@@ -1,8 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Teste Frontend
+#### Em "Tarefas" foram colocados alguns comentários a baixo da tarefa proposta.
 
-## Getting Started
+Objetivo: Criar uma aplicação web de catálogo de automóveis que exiba uma lista de carros com
+informações básicas.
 
-First, run the development server:
+
+Requisitos:
+- Utilize React / Next.js para criar a estrutura do projeto.
+- Utilize TypeScript para garantir a tipagem correta dos dados e componentes.
+- A aplicação deve ser responsivo, ou seja, adaptar-se a diferentes tamanhos de tela.
+- Utilize Git para versionar seu código.
+- Utilize npm para gerenciar as dependências do projeto.
+- Siga boas práticas de reutilização de código, componentes e clean code.
+- Leve em consideração noções de design para tornar a interface da aplicação atraente e intuitiva.
+- A aplicação deve ter um desempenho otimizado, levando em conta carregamento rápido e
+utilização eficiente dos recursos.
+
+### Tarefas:
+✅ Crie um projeto React / Next.js </br>
+✅Implemente uma página inicial que exiba uma lista de carros fictícios </br>
+✅ Cada carro deve ter uma imagem, marca, modelo, ano e preço.
+<p style="font-style: italic;">Comentário: Decidi deixar todas as imagens iguais para não desperdiçar tempo. Isso não interfere em absolutamente nada na lógica da aplicação. Mesmo que seja uma imagem igual, ainda sim está sendo feito uma chamada na api.</p>
+✅ Use dados fictícios ou mockados para preencher a lista de carros.
+
+<p style="font-style: italic;">Comentário: Estou utilizando a biblioteca Miragejs para mockar os dados.</p>
+</br>
+✅ Crie um componente reutilizável para exibir as informações de cada carro na lista.
+</br>
+✅ Torne a página responsiva, garantindo que os elementos se adaptem a diferentes tamanhos de tela.
+</br>
+✅ Adicione uma funcionalidade simples de filtro na lista de carros por marca, modelo ou ano.
+<p style="font-style: italic;">Comentário: "audi" | "a4" | "2023"; "gol" | "g1" | "2022"; "volvo" | "cts" | "2021". Utilize essas opções para ver o funcionamento do componente de busca.
+</p>
+</br>
+✅ O filtro pode ser um campo de pesquisa ou uma seleção de opções.
+</br>
+✅ Implemente a navegação para exibir os detalhes de um carro ao clicar em um item da lista.
+</br>
+✅ A página de detalhes deve exibir informações adicionais sobre o carro, como descrição,
+características, etc.
+</br>
+✅ Implemente a funcionalidade de adicionar um carro aos favoritos
+</br>
+✅ Adicione um ícone de favorito em cada item da lista e na página de detalhes.
+<p style="font-style: italic;">Comentário: Também é possível favoritar e desfavoritar no componente de busca.
+</p>
+
+✅ Os carros marcados como favoritos devem ser armazenados localmente e persistidos entre sessões.
+</br>
+Realize testes básicos para garantir o bom funcionamento da aplicação
+
+
+## ⚙️ Iniciando o projeto
+Primeiramente, instale todas as dependências:
+
+```bash
+npm install
+# or
+yarn
+```
+
+Depois, execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
@@ -10,25 +68,4 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
