@@ -21,4 +21,11 @@ export const SearchStyle = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 3rem;
+
+  .linkMyFavorites {
+    display: flex;
+    margin-left: 5rem;
+    align-items: center;
+    cursor: pointer;
+  }
 `;

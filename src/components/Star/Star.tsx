@@ -8,8 +8,6 @@ interface IStar {
   carId: string;
 }
 
-// : remove ? '#fae100' : '#A9A9A9'
-
 export const Star = ({ size, carId }: IStar) => {
   const { favorite, addFavorite, removeFavorite } = useFavorite();
 

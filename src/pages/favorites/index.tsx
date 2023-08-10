@@ -1,26 +1,34 @@
-import { useState } from 'react';
 import { useFavorite } from '../../services/hooks/useFavorite';
 import { ICar } from '../../services/mirage';
-import { Container, Content, SippnerStyle } from './styles';
-import { Spinner } from '../../components/Spinner/Spinner';
+import { CenterDiv, Container, Content } from './styles';
 import { Car } from '../../components/Cars/Car';
 import { Star } from '../../components/Star/Star';
+import { BiArrowBack } from 'react-icons/bi';
+import Link from 'next/link';
 
 export default function Favorites() {
-  const { favorite, removeFavorite } = useFavorite();
-  const [loading, setLoading] = useState(false);
+  const { favorite } = useFavorite();
 
   return (
     <Container>
-      {loading ? (
-        <SippnerStyle>
-          <Spinner w="50rem" />
-        </SippnerStyle>
+      <CenterDiv>
+        <Link href={'/'}>
+          <div className="linkBack">
+            <BiArrowBack size={20} />
+            <p>Voltar para tela inicial</p>
+          </div>
+        </Link>
+      </CenterDiv>
+
+      {favorite.length === 0 ? (
+        <CenterDiv>
+          <p>Nenhum veículo adicionado aos favoritos</p>
+        </CenterDiv>
       ) : (
         <Content>
           {favorite.map((car: ICar) => (
             <div key={car.id}>
-              <Star remove carId={car.id} size={32} />
+              <Star carId={car.id} size={32} />
               <Car
                 key={car.id}
                 id={car.id}

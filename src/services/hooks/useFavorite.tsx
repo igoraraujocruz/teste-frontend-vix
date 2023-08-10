@@ -8,6 +8,7 @@ import {
 } from 'react';
 import { ICar } from '../mirage';
 import { api } from '../api';
+import toast, { Toaster } from 'react-hot-toast';
 
 interface FavoriteProviderProps {
   children: ReactNode;
@@ -59,7 +60,7 @@ export function FavoriteProvider({
       const favoriteExists = updatedFavorites.find(car => car.id === carId);
 
       if (favoriteExists) {
-        console.log('Favorito já existe');
+        toast.error('Veículo já favoritado!');
       } else {
         const car = await api.get<ICar>(`/car/${carId}`);
 
@@ -71,9 +72,9 @@ export function FavoriteProvider({
       }
 
       setFavorite(updatedFavorites);
-      console.log('Favorito Add');
+      toast.success('Veículo favoritado!');
     } catch {
-      console.log('Favorito erro');
+      toast.error('Ocorreu um erro...');
     }
   };
 
@@ -85,16 +86,18 @@ export function FavoriteProvider({
       if (favoriteIndex >= 0) {
         updatedFavorites.splice(favoriteIndex, 1);
         setFavorite(updatedFavorites);
+        toast.success('Veículo removido dos favoritados');
       } else {
         throw Error();
       }
     } catch {
-      console.log('Favorito erro');
+      toast.error('Ocorreu um error');
     }
   };
 
   const removeAllFavorites = () => {
     setFavorite([]);
+    toast.success('Todos os veículos foram removidos dos favoritados');
   };
 
   return (
@@ -106,6 +109,7 @@ export function FavoriteProvider({
         removeAllFavorites,
       }}
     >
+      <Toaster position="top-center" reverseOrder={false} />
       {children}
     </FavoriteContext.Provider>
   );
