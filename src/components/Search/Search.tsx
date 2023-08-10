@@ -3,6 +3,7 @@ import { Container, Content } from './styles';
 import { api } from '../../services/api';
 import { ICar } from '../../services/mirage';
 import { Spinner } from '../Spinner/Spinner';
+import { Star } from '../Star/Star';
 
 export const Search = () => {
   const [value, setValue] = useState('');
@@ -64,6 +65,7 @@ export const Search = () => {
             <div key={car.id} className="car">
               <img src={car.imageUrl} alt="image car" width={'170px'} />
               <div className="description">
+                <Star size={32} />
                 <h1>
                   {car.brand} - {car.model}
                 </h1>

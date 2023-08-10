@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 export const Container = styled.div`
   .results {
-    padding: 2rem;
+    padding: 0 3rem 0 2rem;
     height: 15rem;
     background: #fff;
     overflow-y: auto;
@@ -23,10 +23,7 @@ export const Container = styled.div`
   .car {
     display: flex;
     justify-content: space-between;
-  }
-
-  .car:not(:first-child) {
-    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .description {

@@ -8,6 +8,8 @@ export interface ICar {
   model: string;
   year: string;
   price: number;
+  description: string;
+  characteristics: string;
 }
 
 export function makeServer() {
@@ -18,8 +20,8 @@ export function makeServer() {
 
     factories: {
       car: Factory.extend({
-        id() {
-          return faker.string.uuid();
+        id(i: number) {
+          return `${i + 1}`;
         },
         imageUrl() {
           return 'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png';
@@ -35,6 +37,13 @@ export function makeServer() {
         },
         price() {
           return faker.commerce.price();
+        },
+        description() {
+          return faker.lorem.lines(3);
+        },
+
+        characteristics() {
+          return faker.lorem.slug(10);
         },
       }),
     },
@@ -53,49 +62,59 @@ export function makeServer() {
 
         const object = [
           {
-            id: faker.string.uuid(),
+            id: '1',
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
             brand: 'Audi',
             model: 'A4',
             year: '2023',
             price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
           },
           {
-            id: faker.string.uuid(),
+            id: '2',
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
             brand: 'Audi',
             model: 'A4',
             year: '2023',
             price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
           },
           {
-            id: faker.string.uuid(),
+            id: '3',
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
             brand: 'Audi',
             model: 'A4',
             year: '2023',
             price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
           },
           {
-            id: faker.string.uuid(),
+            id: '4',
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
             brand: 'Gol',
             model: 'G1',
             year: '2022',
             price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
           },
           {
-            id: faker.string.uuid(),
+            id: '5',
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
             brand: 'Volvo',
             model: 'CTS',
             year: '2021',
             price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
           },
         ];
 
@@ -106,9 +125,130 @@ export function makeServer() {
             obj.year.toLowerCase().includes(params.toLowerCase()),
         );
 
-        console.log(filter);
-
         return filter;
+      });
+
+      this.get('/car/:params', (schema, request) => {
+        const { params } = request.params;
+
+        const object = [
+          {
+            id: '1',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 1',
+            model: 'Modelo 1',
+            year: '2023',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '2',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 2',
+            model: 'Modelo 2',
+            year: '2023',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '3',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 3',
+            model: 'Modelo 3',
+            year: '2023',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '4',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 4',
+            model: 'Modelo 4',
+            year: '2022',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '5',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 5',
+            model: 'Modelo 5',
+            year: '2021',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '6',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 6',
+            model: 'Modelo 6',
+            year: '2023',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '7',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 7',
+            model: 'Modelo 7',
+            year: '2023',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '8',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 8',
+            model: 'Modelo 8',
+            year: '2023',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '9',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 9',
+            model: 'Modelo 9',
+            year: '2022',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '10',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Marca 10',
+            model: 'Modelo 10',
+            year: '2021',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+        ];
+
+        const filter = object.filter(obj =>
+          obj.id.toLowerCase().includes(params.toLowerCase()),
+        );
+
+        return filter[0];
       });
 
       this.namespace = '';
