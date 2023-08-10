@@ -119,6 +119,17 @@ export function makeServer() {
             id: '5',
             imageUrl:
               'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
+            brand: 'Gol',
+            model: 'G1',
+            year: '2022',
+            price: faker.commerce.price(),
+            description: faker.lorem.lines(3),
+            characteristics: faker.lorem.slug(10),
+          },
+          {
+            id: '6',
+            imageUrl:
+              'https://static.wixstatic.com/media/74d759_d482f8d45db940cf8b2c010eb4fdb6dd~mv2.png/v1/crop/x_278,y_2,w_1318,h_905/fill/w_804,h_550,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/carro.png',
             brand: 'Volvo',
             model: 'CTS',
             year: '2021',
