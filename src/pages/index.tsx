@@ -9,7 +9,6 @@ import { Container, Content, SearchStyle, SippnerStyle } from './styles';
 
 export default function Home() {
   const { data, isFetching } = useCars();
-  const { favorite } = useFavorite();
 
   return (
     <Container>
@@ -24,13 +23,7 @@ export default function Home() {
         <Content>
           {data.map((car: ICar) => (
             <div key={car.id}>
-              <Star
-                carId={car.id}
-                size={32}
-                color={favorite.filter(fav =>
-                  fav.id.find(t => t.id === car.id),
-                )}
-              />
+              <Star carId={car.id} size={32} />
               <Car
                 key={car.id}
                 id={car.id}

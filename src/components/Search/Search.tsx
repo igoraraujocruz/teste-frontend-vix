@@ -65,7 +65,7 @@ export const Search = () => {
             <div key={car.id} className="car">
               <img src={car.imageUrl} alt="image car" width={'170px'} />
               <div className="description">
-                <Star size={32} />
+                <Star carId={car.id} size={32} />
                 <h1>
                   {car.brand} - {car.model}
                 </h1>
