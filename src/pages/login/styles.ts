@@ -27,6 +27,8 @@ export const Content = styled.div`
     width: 15rem;
     height: 3rem;
     border: 0;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
   }
 
   button {
