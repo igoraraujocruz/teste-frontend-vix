@@ -15,7 +15,7 @@ export default function CarDetails({ id }: ICar) {
       {!isFetching && (
         <Content>
           <img src={data.imageUrl} alt="car image" width={'350rem'} />
-          <Star size={50} />
+          <Star carId={id} size={50} />
           <h1>
             {data.brand} - {data.model}
           </h1>

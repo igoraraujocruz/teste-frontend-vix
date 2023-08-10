@@ -25,6 +25,8 @@
       "prettier"
   ],
   "rules": {
+    "@typescript-eslint/promise-function-async": "off",
+    "@typescript-eslint/consistent-type-assertions": "off",
     "react-hooks/rules-of-hooks": "error",
     "@typescript-eslint/consistent-type-imports": "off",
     "@typescript-eslint/prefer-nullish-coalescing": "off",

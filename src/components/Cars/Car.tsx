@@ -1,13 +1,11 @@
 import { ICar } from '../../services/mirage';
-import { Star } from '../Star/Star';
 import { Container, Main } from './styles';
 import Link from 'next/link';
 
 export const Car = (car: ICar) => {
   return (
-    <Main>
-      <Star size={32} />
-      <Link key={car.id} href={`/car/${car.id}`}>
+    <Main key={car.id}>
+      <Link href={`/car/${car.id}`}>
         <Container>
           <img src={car.imageUrl} alt="image car" />
           <h1>

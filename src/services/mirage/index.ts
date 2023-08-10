@@ -8,8 +8,8 @@ export interface ICar {
   model: string;
   year: string;
   price: number;
-  description: string;
-  characteristics: string;
+  description?: string;
+  characteristics?: string;
 }
 
 export function makeServer() {
