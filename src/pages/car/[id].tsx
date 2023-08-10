@@ -2,6 +2,8 @@ import { GetServerSideProps } from 'next';
 import { useCar } from '../../services/hooks/useCars';
 import { Container, Content } from './styles';
 import { Star } from '../../components/Star/Star';
+import { BiArrowBack } from 'react-icons/bi';
+import Link from 'next/link';
 
 interface ICar {
   id: string;
@@ -14,8 +16,15 @@ export default function CarDetails({ id }: ICar) {
     <Container>
       {!isFetching && (
         <Content>
-          <img src={data.imageUrl} alt="car image" width={'350rem'} />
-          <Star carId={id} size={50} />
+          <Link href={'/'}>
+            <div className="linkBack">
+              <BiArrowBack size={20} />
+              <p>Voltar para tela inicial</p>
+            </div>
+          </Link>
+
+          <img src={data.imageUrl} alt="car image" width={'325rem'} />
+          <Star carId={id} size={30} />
           <h1>
             {data.brand} - {data.model}
           </h1>

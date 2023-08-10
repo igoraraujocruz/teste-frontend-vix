@@ -63,19 +63,21 @@ export const Search = () => {
           </div>
 
           {findedValues.map(car => (
-            <Link key={car.id} href={`/car/${car.id}`}>
-              <div className="car">
-                <img src={car.imageUrl} alt="image car" width={'170px'} />
-                <div className="description">
-                  <Star carId={car.id} size={32} />
-                  <h1>
-                    {car.brand} - {car.model}
-                  </h1>
-                  <h2>{car.year}</h2>
-                  <h2>R$ {car.price}</h2>
+            <div key={car.id}>
+              <Star carId={car.id} size={32} />
+              <Link href={`/car/${car.id}`}>
+                <div className="car">
+                  <img src={car.imageUrl} alt="image car" width={'170px'} />
+                  <div className="description">
+                    <h1>
+                      {car.brand} - {car.model}
+                    </h1>
+                    <h2>{car.year}</h2>
+                    <h2>R$ {car.price}</h2>
+                  </div>
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       )}

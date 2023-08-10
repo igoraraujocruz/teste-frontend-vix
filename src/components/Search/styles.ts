@@ -16,7 +16,7 @@ export const Container = styled.div`
       color: #444;
       background: none;
       border: none;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
   }
 

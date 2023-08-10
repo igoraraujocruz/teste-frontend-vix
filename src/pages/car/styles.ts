@@ -19,9 +19,26 @@ export const Content = styled.div`
     margin-top: 1rem;
   }
 
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  h3 {
+    font-size: 0.9rem;
+  }
+
   .characteristics {
     margin-top: 2rem;
     background: #444;
     color: #fff;
+  }
+
+  .linkBack {
+    display: flex;
+    align-items: center;
   }
 `;
