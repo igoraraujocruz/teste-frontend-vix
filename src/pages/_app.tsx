@@ -4,6 +4,7 @@ import { ReactQueryDevtools } from 'react-query/devtools';
 import { makeServer } from '../services/mirage';
 import GlobalStyle from '../styles/global';
 import dynamic from 'next/dynamic';
+import { AuthProvider } from '../services/hooks/useAuth';
 
 const queryClient = new QueryClient();
 
@@ -23,7 +24,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
       <DynamicContextProvider>
-        <Component {...pageProps} />
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
         <ReactQueryDevtools />
         <GlobalStyle />
       </DynamicContextProvider>

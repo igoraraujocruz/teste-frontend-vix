@@ -21,6 +21,9 @@ export default function Home() {
             <p>Meus Favoritos</p>
           </div>
         </Link>
+        <Link href={'/login'}>
+          <p>Login</p>
+        </Link>
       </SearchStyle>
 
       {isFetching ? (

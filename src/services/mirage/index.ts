@@ -56,6 +56,16 @@ export function makeServer() {
       this.namespace = 'api';
       this.timing = 750;
 
+      this.post('/auth', () => {
+        return {
+          token: 'd65sa4d6a54d6a54d65as4d',
+          refreshToken: '65d6a4d654as65d4as6',
+          user: {
+            name: 'João',
+          },
+        };
+      });
+
       this.get('/cars');
       this.get('/cars/:params', (schema, request) => {
         const { params } = request.params;

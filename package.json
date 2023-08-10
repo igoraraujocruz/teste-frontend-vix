@@ -9,14 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.2.0",
     "axios": "^1.4.0",
     "next": "13.4.13",
+    "nookies": "^2.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.45.4",
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.10.1",
     "react-query": "^3.39.3",
-    "styled-components": "^6.0.7"
+    "styled-components": "^6.0.7",
+    "yup": "^1.2.0"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.0.2",

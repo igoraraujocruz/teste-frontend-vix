@@ -20,12 +20,25 @@ export const SippnerStyle = styled.main`
 export const SearchStyle = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 3rem;
 
   .linkMyFavorites {
     display: flex;
-    margin-left: 5rem;
+    margin-left: 1rem;
     align-items: center;
     cursor: pointer;
+  }
+
+  p {
+    margin-left: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .linkMyFavorites {
+      margin-top: 2rem;
+    }
   }
 `;
